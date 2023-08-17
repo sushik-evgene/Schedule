@@ -71,6 +71,24 @@ button3 = Button(other_tab,
                  relief="ridge")
 button3.pack(pady=10)
 
+button4 = Button(other_tab,
+                 text='Автори',
+                 width=25, height=2,
+                 bg='black', fg='white',
+                 font='Arial 16',
+                 borderwidth=5,
+                 relief="ridge")
+button4.pack(pady=10)
+
+button5 = Button(other_tab,
+                 text='Техпідтримка',
+                 width=25, height=2,
+                 bg='black', fg='white',
+                 font='Arial 16',
+                 borderwidth=5,
+                 relief="ridge")
+button5.pack(pady=10)
+
 # То же самое для вкладки "Підменю"
 label_submenu = Label(submenu_tab, text="Підменю", font='Arial 16')
 label_submenu.pack(pady=20)
