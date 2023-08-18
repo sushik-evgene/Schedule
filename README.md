@@ -1,23 +1,35 @@
 from tkinter import *
 from tkinter import ttk
 
-def show_menu_tab():                 # Вкладка  Головне меню
+def show_menu_tab():                       # Вкладка  Головне меню
     notebook.select(menu_tab)
 
-def show_submenu_tab():              # Вкладка Меню
+def show_submenu_tab():                    # Вкладка Меню
     notebook.select(submenu_tab)
 
-def show_other_tab():                # Вкладка Інше
+def show_other_tab():                      # Вкладка Інше
     notebook.select(other_tab)
 
-def show_versions_tab():             # Вкладка Верії та оновлення
+def show_versions_tab():                   # Вкладка Верії та оновлення
     notebook.select(versions_tab)
 
-def show_autor_tab():                # Вкладка Автори
+def show_autor_tab():                      # В кладка Автори
     notebook.select(autor_tab)
 
-def show_support_tab():              # Вкладка Техпідтримка
+def show_support_tab():                    # Вкладка Техпідтримка
     notebook.select(support_tab)
+
+def show_week_schedule_tab():              # Вкладка Розклад по дням тиждня
+    notebook.select(week_schedule_tab)
+
+def show_all_schedule_tab():               # Вкладка Весь розкла
+    notebook.select(all_schedule_tab)
+
+def show_list_teachers_tab():              # Вкладка Список викладачів
+    notebook.select(list_teachers_tab)
+
+def show_items_tab():                      # Вкладка Предмети
+    notebook.select(items_tab)
 
 root = Tk()
 root.geometry("450x650+100+100")
@@ -37,6 +49,10 @@ submenu_tab = Frame(notebook)
 versions_tab = Frame(notebook)
 autor_tab = Frame(notebook)
 support_tab = Frame(notebook)
+week_schedule_tab = Frame(notebook)
+all_schedule_tab = Frame(notebook)
+list_teachers_tab = Frame(notebook)
+items_tab  = Frame(notebook)
 
 notebook.add(menu_tab, text="Меню")
 notebook.add(other_tab, text="Інше")
@@ -44,6 +60,11 @@ notebook.add(submenu_tab, text="Підменю")
 notebook.add(versions_tab, text="Версії та оновлення")
 notebook.add(autor_tab, text="Автори")
 notebook.add(support_tab, text="Техпідтримка")
+notebook.add(week_schedule_tab, text="Розклад по дням тиждня")
+notebook.add(all_schedule_tab, text="Весь розкла")
+notebook.add(list_teachers_tab, text="Список викладачів")
+notebook.add(items_tab, text="Предмети")
+
 
 label = Label(menu_tab, text="Головне меню", font='Arial 16')
 label.pack(pady=10)
@@ -85,8 +106,8 @@ def back_to_menu_from_other():
 button_back_other = Button(frame_back_other, text="← Назад", command=back_to_menu_from_other)
 button_back_other.pack(side=LEFT)
 
-label3 = Label(other_tab, text="ㅤ", font='Arial 16')
-label3.pack(pady=30)
+label = Label(other_tab, text="ㅤ", font='Arial 16')
+label.pack(pady=30)
 
 button3 = Button(other_tab,
                  text='Версії та оновлення',
@@ -171,8 +192,8 @@ def back_to_menu_from_submenu():
 button_back_submenu = Button(frame_back_submenu, text="← Назад", command=back_to_menu_from_submenu)
 button_back_submenu.pack(side=LEFT)
 
-label2 = Label(submenu_tab, text="ㅤ", font='Arial 16')
-label2.pack(pady=20)
+label = Label(submenu_tab, text="ㅤ", font='Arial 16')
+label.pack(pady=20)
 
 button6 = Button(submenu_tab,
                  text='Розклад по дням тиждня',
@@ -180,8 +201,21 @@ button6 = Button(submenu_tab,
                  bg='black', fg='white',
                  font='Arial 16',
                  borderwidth=5,
-                 relief="ridge")
+                 relief="ridge",
+                 command=show_week_schedule_tab)
 button6.pack(pady=10)
+
+label = Label(week_schedule_tab, text="Розклад по дням тиждня", font='Arial 16')
+label.pack(pady=10)
+
+frame_back_week_schedule = Frame(week_schedule_tab)
+frame_back_week_schedule.pack(anchor='nw', padx=5, pady=5)
+
+def back_to_submenu_from_week_schedule():
+    notebook.select(submenu_tab)
+
+button_back_week_schedule = Button(frame_back_week_schedule, text="← Назад", command=back_to_submenu_from_week_schedule)
+button_back_week_schedule.pack(side=LEFT)
 
 button7 = Button(submenu_tab,
                  text='Весь розклад',
@@ -189,8 +223,21 @@ button7 = Button(submenu_tab,
                  bg='black', fg='white',
                  font='Arial 16',
                  borderwidth=5,
-                 relief="ridge")
+                 relief="ridge",
+                 command=show_all_schedule_tab)
 button7.pack(pady=10)
+
+label = Label(all_schedule_tab, text="Весь розклад", font='Arial 16')
+label.pack(pady=10)
+
+frame_back_all_schedule = Frame(all_schedule_tab)
+frame_back_all_schedule.pack(anchor='nw', padx=5, pady=5)
+
+def back_to_submenu_from_all_schedule():
+    notebook.select(submenu_tab)
+
+button_back_all_schedule = Button(frame_back_all_schedule, text="← Назад", command=back_to_submenu_from_all_schedule)
+button_back_all_schedule.pack(side=LEFT)
 
 button8 = Button(submenu_tab,
                  text='Список викладачів',
@@ -198,7 +245,8 @@ button8 = Button(submenu_tab,
                  bg='black', fg='white',
                  font='Arial 16',
                  borderwidth=5,
-                 relief="ridge")
+                 relief="ridge",
+                 command=show_list_teachers_tab)
 button8.pack(pady=10)
 
 button9 = Button(submenu_tab,
@@ -207,7 +255,8 @@ button9 = Button(submenu_tab,
                  bg='black', fg='white',
                  font='Arial 16',
                  borderwidth=5,
-                 relief="ridge")
+                 relief="ridge",
+                 command=show_items_tab)
 button9.pack(pady=10)
 
 root.mainloop()
