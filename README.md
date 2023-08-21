@@ -77,7 +77,7 @@ support_tab = Frame(notebook)              # | Техпідтримка
 
 
 
-'''
+
 set_tab_background(menu_tab, background_image)                   # Задаем фон (Фото)--Головна
 set_tab_background(submenu_tab, background_image)                # | Меню
 set_tab_background(other_tab, background_image)                  # | Інше
@@ -87,7 +87,7 @@ set_tab_background(list_teachers_tab, background_image)          # | Списо�
 set_tab_background(items_tab, background_image)                  # | Предмети
 set_tab_background(versions_tab, background_image)               # | Версії та оновлення
 set_tab_background(autor_tab, background_image)                  # | Автори
-set_tab_background(support_tab, background_image)                # | Техпідтримка'''
+set_tab_background(support_tab, background_image)                # | Техпідтримка
 
 for tab in [menu_tab, submenu_tab, other_tab, versions_tab, autor_tab,support_tab,
 week_schedule_tab, all_schedule_tab,list_teachers_tab, items_tab]:
