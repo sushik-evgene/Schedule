@@ -37,13 +37,14 @@ background_menu_image = PhotoImage(file="C:/IT-Schedule/img1/background_menu.gif
 background_week_schedule_image = PhotoImage(file="C:/IT-Schedule/img1/background_week_schedule.gif")
 background_all_schedule_image = PhotoImage(file="C:/IT-Schedule/img1/background_schedule_all.gif")
 background_question_image = PhotoImage(file="C:/IT-Schedule/img1/background_question_answer.gif")
+background_list_teachers_image = PhotoImage(file="C:/IT-Schedule/img1/background_list_teachers.gif")
 
 
-image_back_menu = Image.open("C:/IT-Schedule/img1/back_submenu.jpg")                         # | С трелка назад
 image_back_all_schedule = Image.open("C:/IT-Schedule/img1/back_schedule_all.jpg")
 image_back_week_schedule = Image.open("C:/IT-Schedule/img1/back_schedule_all.jpg")
-image_back_other = Image.open("C:/IT-Schedule/img1/back_submenu.jpg")
 image_back_question = Image.open("C:/IT-Schedule/img1/back_schedule_all.jpg")
+image_back_list_teachers = Image.open("C:/IT-Schedule/img1/back_schedule_all.jpg")
+
 
 button_week_schedule_image = Image.open("C:/IT-Schedule/img1/button_week_schedule.jpg")
 button_all_schedule_image = Image.open("C:/IT-Schedule/img1/button_all_schedule.jpg")
@@ -83,6 +84,7 @@ other_tab = Frame(notebook)                # | Інше
 week_schedule_tab = Frame(notebook)        # | Розклад по дням тиждня
 all_schedule_tab = Frame(notebook)         # | Весь розклад
 question_tab = Frame(notebook)
+list_teachers_tab = Frame(notebook)
 
 set_tab_background(submenu_tab, background_submenu_image)
 set_tab_background(other_tab, background_other_image)
@@ -90,6 +92,7 @@ set_tab_background(menu_tab, background_menu_image)
 set_tab_background(week_schedule_tab, background_week_schedule_image)
 set_tab_background(all_schedule_tab, background_all_schedule_image)
 set_tab_background(question_tab, background_question_image)
+set_tab_background(list_teachers_tab, background_list_teachers_image)
 
 
 notebook.add(submenu_tab)                  # | Головна
@@ -98,6 +101,8 @@ notebook.add(menu_tab)                     # | Меню
 notebook.add(week_schedule_tab)            # | Розклад по дням тиждня
 notebook.add(all_schedule_tab)             # | Весь розклад
 notebook.add(question_tab)
+notebook.add(list_teachers_tab)
+
 
 # ВСЯ ВКЛАДКА РОЗКЛАД
 label = Label(submenu_tab, text="ㅤ", font='e-Ukraine 16', background="#c6d4cb")
@@ -336,6 +341,22 @@ button3.pack(side="right", padx=26)
 button21.pack(side="right", padx=22)
 button1.pack(side="left", padx=40)
 
+# ВКЛАДКА СПИСОК ВИКЛАДАЧІВ
+frame_back_list_teachers = Frame(list_teachers_tab)
+frame_back_list_teachers.pack(anchor='nw', padx=25, pady=28)
+
+def back_to_submenu_from_list_teachers():
+    notebook.select(other_tab)
+
+new_size_back_list_teachers = (25, 22)                      # Новый размер (ширина, высота)
+image_back_list_teachers = image_back_list_teachers.resize(new_size_back_list_teachers)
+
+photo_back_list_teachers = ImageTk.PhotoImage(image_back_list_teachers)
+
+button_back_list_teachers = Button(frame_back_list_teachers, image=photo_back_list_teachers, borderwidth=-4,
+activebackground="#dfe7f2", activeforeground="#dfe7f2", relief="flat", highlightthickness=0, command=back_to_submenu_from_list_teachers)
+button_back_list_teachers.pack(side=LEFT)
+
 
 # ВСЯ ВКЛАДКА МЕНЮ
 
@@ -452,14 +473,14 @@ button_about_us.pack(pady=0)
 label = Label(menu_tab, text="ㅤ", font='Arial 12', background="#e3edf5")
 label.pack(pady=30)
 
-button34 = Button(menu_tab, text="Кнопка" )
-button24 = Button(menu_tab, text="Інше", command=show_other_tab)
 button14 = Button(menu_tab, text="Розклад", command=show_submenu_tab)
+button24 = Button(menu_tab, text="Інше", command=show_other_tab)
+button34 = Button(menu_tab, text="Кнопка" )
 
-button34.pack(side="left", padx=45)
-button24.pack(side="left", padx=12)
+
 button14.pack(side="left", padx=52)
-
+button24.pack(side="left", padx=12)
+button34.pack(side="left", padx=45)
 
 
 
