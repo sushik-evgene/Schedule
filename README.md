@@ -69,8 +69,17 @@ button_items_image = Image.open("C:/IT-Schedule/img1/button_items.jpg")
 '''button_schedule_tab_image = Image.open("C:/IT-Schedule/img1/schedule_tab.jpg")'''
 
 
-button_other_tab_image = Image.open("C:/IT-Schedule/img1/other_tab.jpg")
-button_menu_tab_image = Image.open("C:/IT-Schedule/img1/menu_tab.jpg")
+button_schedule_tab_image2 = Image.open("C:/IT-Schedule/img1/schedule_tab1.jpg")
+button_schedule_tab_image3 = Image.open("C:/IT-Schedule/img1/schedule_tab1.jpg")
+
+button_other_tab_image1 = Image.open("C:/IT-Schedule/img1/other_tab.jpg")
+button_other_tab_image3 = Image.open("C:/IT-Schedule/img1/other_tab1.jpg")
+
+button_menu_tab_image1 = Image.open("C:/IT-Schedule/img1/menu_tab.jpg")
+button_menu_tab_image2 = Image.open("C:/IT-Schedule/img1/menu_tab1.jpg")
+
+
+
 
 style = ttk.Style()                        # Создаем стиль для скрытия фона и заголовка верхней панели
 style.layout("TNotebook.Tab", [])          # Пустой layout убирает заголовок
@@ -105,8 +114,8 @@ notebook.add(list_teachers_tab)
 
 
 # ВСЯ ВКЛАДКА РОЗКЛАД
-label = Label(submenu_tab, text="ㅤ", font='e-Ukraine 16', background="#c6d4cb")
-label.pack(pady=55)
+label = Label(submenu_tab, text="ㅤ", font='e-Ukraine 16', background="#fee698")
+label.pack(pady=70)
 
 new_size_button_week_schedule = (380, 150)                      # Новый размер (ширина, высота)
 button_week_schedule_image = button_week_schedule_image.resize(new_size_button_week_schedule)
@@ -116,14 +125,14 @@ photo_button_week_schedule = ImageTk.PhotoImage(button_week_schedule_image)
 button_week_schedule = Button(submenu_tab,
                       image=photo_button_week_schedule,
                       borderwidth=0,
-                      activebackground="#c6d4cb",
-                      activeforeground="#c6d4cb",
+                      activebackground="#fee698",
+                      activeforeground="#fee698",
                       relief="flat", highlightthickness=0,
                       command=show_week_schedule_tab)
 button_week_schedule.pack(pady=0)
 
 
-new_size_button_all_schedule = (380, 170)                      # Новый размер (ширина, высота)
+new_size_button_all_schedule = (380, 150)                      # Новый размер (ширина, высота)
 button_all_schedule_image = button_all_schedule_image.resize(new_size_button_all_schedule)
 
 photo_button_all_schedule = ImageTk.PhotoImage(button_all_schedule_image)
@@ -131,50 +140,46 @@ photo_button_all_schedule = ImageTk.PhotoImage(button_all_schedule_image)
 button_all_schedule = Button(submenu_tab,
                       image=photo_button_all_schedule,
                       borderwidth=0,
-                      activebackground="#c6d4cb",
-                      activeforeground="#c6d4cb",
+                      activebackground="#fee698",
+                      activeforeground="#fee698",
                       relief="flat", highlightthickness=0,
                       command=show_all_schedule_tab)
 button_all_schedule.pack(anchor='nw', padx=33, pady=3)
 
 
-label = Label(submenu_tab, text="ㅤ", font='Arial 12', background="#c6d4cb")
-label.pack(pady=38)
+label = Label(submenu_tab, text="ㅤ", font='Arial 20', background="#fee698")
+label.pack(pady=28)
 
-new_size_button_menu_tab = (50, 60)                      # Новый размер (ширина, высота)
-button_menu_tab_image = button_menu_tab_image.resize(new_size_button_menu_tab)
+new_size_button_menu_tab1 = (68, 60)                      # Новый размер (ширина, высота)
+button_menu_tab_image1 = button_menu_tab_image1.resize(new_size_button_menu_tab1)
 
-photo_button_menu_tab = ImageTk.PhotoImage(button_menu_tab_image)
+photo_button_menu_tab1 = ImageTk.PhotoImage(button_menu_tab_image1)
 
 button_menu_tab1 = Button(submenu_tab,
-                      image=photo_button_menu_tab,
+                      image=photo_button_menu_tab1,
                       borderwidth=0,
-                      activebackground="#c6d4cb",
-                      activeforeground="#c6d4cb",
+                      activebackground="#fee698",
+                      activeforeground="#fee698",
                       relief="flat", highlightthickness=0,
                       command=show_menu_tab)
 
 
-new_size_button_other_tab = (35, 50)                      # Новый размер (ширина, высота)
-button_other_tab_image = button_other_tab_image.resize(new_size_button_other_tab)
+new_size_button_other_tab1 = (68, 60)                      # Новый размер (ширина, высота)
+button_other_tab_image1 = button_other_tab_image1.resize(new_size_button_other_tab1)
 
-photo_button_other_tab = ImageTk.PhotoImage(button_other_tab_image)
+photo_button_other_tab1 = ImageTk.PhotoImage(button_other_tab_image1)
 
 button_other_tab1 = Button(submenu_tab,
-                      image=photo_button_other_tab,
+                      image=photo_button_other_tab1,
                       borderwidth=0,
-                      activebackground="#c6d4cb",
-                      activeforeground="#c6d4cb",
+                      activebackground="#fee698",
+                      activeforeground="#fee698",
                       relief="flat", highlightthickness=0,
                       command=show_other_tab)
 
 
-
-button2 = Button(submenu_tab, text="Кнопка 1")
-
-button_menu_tab1.pack(side="right", padx=30)
-button2.pack(side="right", padx=30)
-button_other_tab1.pack(side="right", padx=28, pady=15)
+button_menu_tab1.pack(side="right", padx=37)
+button_other_tab1.pack(side="right", padx=47)
 
 
 
@@ -298,8 +303,8 @@ button_back_all_schedule.pack(side=LEFT)
 
 
 # ВСЯ ВКЛАДКА ІНШЕ
-label = Label(other_tab, text="ㅤ", font='e-Ukraine 1', background="#c6d9e8")
-label.pack(pady=67)
+label = Label(other_tab, text="ㅤ", font='e-Ukraine 16', background="#f6f4f0")
+label.pack(pady=70)
 
 new_size_button_list_teachers = (380, 150)                      # Новый размер (ширина, высота)
 button_list_teachers_image = button_list_teachers_image.resize(new_size_button_list_teachers)
@@ -309,14 +314,14 @@ photo_button_list_teachers = ImageTk.PhotoImage(button_list_teachers_image)
 button_list_teachers = Button(other_tab,
                       image=photo_button_list_teachers,
                       borderwidth=0,
-                      activebackground="#e3edf5",
-                      activeforeground="#e3edf5",
+                      activebackground="#f6f4f0",
+                      activeforeground="#f6f4f0",
                       relief="flat", highlightthickness=0,
                       command=show_list_teachers_tab)
 button_list_teachers.pack(pady=0)
 
 
-new_size_button_items = (380, 170)                      # Новый размер (ширина, высота)
+new_size_button_items = (380, 150)                      # Новый размер (ширина, высота)
 button_items_image = button_items_image.resize(new_size_button_items)
 
 photo_button_items = ImageTk.PhotoImage(button_items_image)
@@ -324,37 +329,74 @@ photo_button_items = ImageTk.PhotoImage(button_items_image)
 button_items = Button(other_tab,
                       image=photo_button_items,
                       borderwidth=0,
-                      activebackground="#e3edf5",
-                      activeforeground="#e3edf5",
+                      activebackground="#f6f4f0",
+                      activeforeground="#f6f4f0",
                       relief="flat", highlightthickness=0,
                       command=show_items_tab)
-button_items.pack(anchor='nw', padx=33, pady=0)
+button_items.pack(anchor='nw', padx=33, pady=3)
 
-label = Label(other_tab, text="ㅤ", font='Arial 12', background="#e3edf5")
-label.pack(pady=38)
+label = Label(other_tab, text="ㅤ", font='Arial 20', background="#f6f4f0")
+label.pack(pady=28)
 
-button3 = Button(other_tab, text="Меню", command=show_menu_tab)
-button21 = Button(other_tab, text="Кнопка 2")
-button1 = Button(other_tab, text="Розклад", command=show_submenu_tab)
 
-button3.pack(side="right", padx=26)
-button21.pack(side="right", padx=22)
-button1.pack(side="left", padx=40)
+
+
+
+
+
+
+
+new_size_button_menu_tab2 = (68, 60)                      # Новый размер (ширина, высота)
+button_menu_tab_image2 = button_menu_tab_image2.resize(new_size_button_menu_tab2)
+
+photo_button_menu_tab2 = ImageTk.PhotoImage(button_menu_tab_image2)
+
+button_menu_tab2 = Button(other_tab,
+                      image=photo_button_menu_tab2,
+                      borderwidth=0,
+                      activebackground="white",
+                      activeforeground="white",
+                      relief="flat", highlightthickness=0,
+                      command=show_menu_tab)
+
+
+
+
+button_schedule_tab2 = Button(other_tab, text="Розклад", command=show_submenu_tab)
+
+new_size_button_schedule_tab2 = (68, 60)                      # Новый размер (ширина, высота)
+button_schedule_tab_image2 = button_schedule_tab_image2.resize(new_size_button_schedule_tab2)
+
+photo_button_schedule_tab2 = ImageTk.PhotoImage(button_schedule_tab_image2)
+
+button_schedule_tab2 = Button(other_tab,
+                      image=photo_button_schedule_tab2,
+                      borderwidth=0,
+                      activebackground="white",
+                      activeforeground="white",
+                      relief="flat", highlightthickness=0,
+                      command=show_submenu_tab)
+
+
+
+button_menu_tab2.pack(side="right", padx=37)
+button_schedule_tab2.pack(side="left", padx=38)
+
 
 # ВКЛАДКА СПИСОК ВИКЛАДАЧІВ
 frame_back_list_teachers = Frame(list_teachers_tab)
-frame_back_list_teachers.pack(anchor='nw', padx=25, pady=28)
+frame_back_list_teachers.pack(anchor='nw', padx=25, pady=22)
 
 def back_to_submenu_from_list_teachers():
     notebook.select(other_tab)
 
-new_size_back_list_teachers = (25, 22)                      # Новый размер (ширина, высота)
+new_size_back_list_teachers = (18, 25)                      # Новый размер (ширина, высота)
 image_back_list_teachers = image_back_list_teachers.resize(new_size_back_list_teachers)
 
 photo_back_list_teachers = ImageTk.PhotoImage(image_back_list_teachers)
 
 button_back_list_teachers = Button(frame_back_list_teachers, image=photo_back_list_teachers, borderwidth=-4,
-activebackground="#dfe7f2", activeforeground="#dfe7f2", relief="flat", highlightthickness=0, command=back_to_submenu_from_list_teachers)
+activebackground="#f6f4f0", activeforeground="#f6f4f0", relief="flat", highlightthickness=0, command=back_to_submenu_from_list_teachers)
 button_back_list_teachers.pack(side=LEFT)
 
 
@@ -444,7 +486,7 @@ def open_new_window():
     new_window = Toplevel(root)  # Создаем новое окно
     new_window.geometry("1325x725+90+30")  # Задаем размеры (Ширина)-(Высота) Место появления окна
     new_window.resizable(False, False)
-    new_window.title("Про Нас")
+    new_window.title("Про НАс")
 
     label5 = Label(new_window, text='''
     Это новое окно 
@@ -486,12 +528,12 @@ button34.pack(side="left", padx=45)
 
 # ВКЛАДКА ПИТАННЯ ТА ВЫДПОВІ
 frame_back_question = Frame(question_tab)
-frame_back_question.pack(anchor='nw', padx=25, pady=28)
+frame_back_question.pack(anchor='nw', padx=25, pady=22)
 
 def back_to_submenu_from_question():
     notebook.select(menu_tab)
 
-new_size_back_question = (25, 22)                      # Новый размер (ширина, высота)
+new_size_back_question = (18, 25)                      # Новый размер (ширина, высота)
 image_back_question = image_back_question.resize(new_size_back_question)
 
 photo_back_question = ImageTk.PhotoImage(image_back_question)
